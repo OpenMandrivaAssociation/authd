@@ -4,7 +4,7 @@
 %define lib_name_orig	lib%{name} 
 %define lib_major 0
 %define lib_name %mklibname %name %{lib_major}
-%define devlname %mklibname -d %name
+%define develname %mklibname -d %name
 
 Summary:	Software for obtaining and verifying user credentials 
 Name:		%{name}
