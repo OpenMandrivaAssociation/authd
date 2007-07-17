@@ -17,7 +17,7 @@ Source:		http://www.theether.org/authd/%{name}-%{version}.tar.gz
 Source1:	authd.init
 Patch0:		authd-Makefile.in.patch	
 Requires:	openssh-clients, openssh-server
-Prereq: 	rpm-helper	
+Requires(pre): 	rpm-helper	
 Provides:	%{name}-%{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 Buildrequires:  libe-cluster >= 0.2, openssl-devel
