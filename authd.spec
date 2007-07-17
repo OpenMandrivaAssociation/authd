@@ -3,7 +3,8 @@
 %define release %mkrel 3
 %define lib_name_orig	lib%{name} 
 %define lib_major 0
-%define lib_name %{lib_name_orig}%{lib_major}
+%define lib_name %mklibname %name %{lib_major}
+%define devlname %mklibname -d %name
 
 Summary:	Software for obtaining and verifying user credentials 
 Name:		%{name}
@@ -21,10 +22,12 @@ Provides:	%{name}-%{version}
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 Buildrequires:  libe-cluster >= 0.2, openssl-devel
 
-%package 	-n %{lib_name}-devel 
+%package 	-n %{develname}
 Summary:	Devel Package for authd 
 Group:          Development/Other
-Provides:       %{lib_name}-devel
+Provides:       %{name}-devel = %{version}-%{release}
+Obsoletes:	%{lib_name}-devel
+Obsoletes:	lib%{name}%{lib_major}-devel
 
 %description
 authd is a software package for obtaining and verifying user credentials 
@@ -33,7 +36,7 @@ It includes a server (authd) for authenticating local users through UNIX
 domain sockets and processing credentials, and a client library (libauth.a) 
 for requesting new credentials and verifying credentials signed by the server.
 
-%description -n %{lib_name}-devel 
+%description -n %{develname} 
 authd is a software package for obtaining and verifying user credentials
 which contain cryptographic signatures based on RSA public key cryptography.
 Provide file auth.h and libauth.a .
@@ -76,7 +79,7 @@ rm -fr %{buildroot}
 %config(noreplace) %{_initrddir}/authd
 %{_sbindir}/authd
 
-%files	-n %{lib_name}-devel	
+%files	-n %{develname}
 %defattr(-,root,root)
 %doc INSTALL ChangeLog
 %{_includedir}/auth.h
