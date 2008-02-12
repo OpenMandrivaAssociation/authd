@@ -76,7 +76,7 @@ rm -fr %{buildroot}
 %files
 %defattr(-,root,root) 
 %doc INSTALL ChangeLog
-%config(noreplace) %{_initrddir}/authd
+%{_initrddir}/authd
 %{_sbindir}/authd
 
 %files	-n %{develname}
@@ -84,5 +84,3 @@ rm -fr %{buildroot}
 %doc INSTALL ChangeLog
 %{_includedir}/auth.h
 %{_libdir}/libauth.a
-
-
