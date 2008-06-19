@@ -1,6 +1,6 @@
 %define name	authd
 %define	version	0.2.2	
-%define release %mkrel 4
+%define release %mkrel 5
 %define lib_name_orig	lib%{name} 
 %define lib_major 0
 %define lib_name %mklibname %name %{lib_major}
