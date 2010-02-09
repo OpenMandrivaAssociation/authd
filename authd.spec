@@ -44,7 +44,7 @@ Provide file auth.h and libauth.a .
 %prep
 
 %setup -q
-%patch0 -p0 -b .patch
+%patch0 -p1 -b .patch
 %patch1 -p0
 
 chmod 644 ChangeLog COPYING
