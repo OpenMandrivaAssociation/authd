@@ -6,7 +6,7 @@
 Summary:	Software for obtaining and verifying user credentials 
 Name:		authd
 Version:	0.2.3
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	BSD-Like
 Group:		System/Servers
 URL:		http://www.cs.berkeley.edu/~bnc/authd/
@@ -52,7 +52,7 @@ chmod 644 ChangeLog COPYING
 %build
 export CFLAGS="%{optflags} -D_GNU_SOURCE -D_REENTRANT"
 
-%configure
+%configure2_5x
 
 %make
 
