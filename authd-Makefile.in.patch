@@ -1,0 +1,20 @@
+--- authd-0.2.3/Makefile.in	2008-06-05 06:01:58.000000000 +0200
++++ authd-0.2.3.patched/Makefile.in	2010-02-09 10:55:26.429971986 +0100
+@@ -578,7 +578,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-includeHEADERS
++install-data-am: install-includeHEADERS
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -627,7 +627,7 @@
+ 	distclean-hdr distclean-tags distcleancheck distdir \
+ 	distuninstallcheck dvi dvi-am html html-am info info-am \
+ 	install install-am install-data install-data-am \
+-	install-data-local install-dvi install-dvi-am install-exec \
++	install-dvi install-dvi-am install-exec \
+ 	install-exec-am install-html install-html-am \
+ 	install-includeHEADERS install-info install-info-am \
+ 	install-libLIBRARIES install-man install-pdf install-pdf-am \

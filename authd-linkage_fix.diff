@@ -1,0 +1,11 @@
+--- Makefile.in	2008-08-14 15:29:57.000000000 +0200
++++ Makefile.in.oden	2008-08-14 15:38:28.000000000 +0200
+@@ -189,7 +189,7 @@
+ 				  	  auth.h
+ 
+ libauth_a_SOURCES = auth.c auth.h
+-authd_LDADD = -lpthread -lssl -le
++authd_LDADD = -lpthread -lssl -le -lcrypto
+ authd_LDFLAGS = -L.
+ EXTRA_DIST = config/authd.in authd.spec
+ all: config.h
