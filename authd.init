@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+#	/etc/rc.d/init.d/authd
+#
+# Starts the authd daemon
+#
+# chkconfig: 345 14 80 
+# description: authd startup script 
+# processname: authd
+# version 1.1
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+test -x /usr/sbin/authd || exit 0
+
+RETVAL=0
+
+if [ ! -f /etc/auth_priv.pem ] ; then
+	openssl genrsa -rand 15000 -out /etc/auth_priv.pem >&/dev/null
+	chmod 600 /etc/auth_priv.pem
+	openssl rsa -in /etc/auth_priv.pem -pubout -out /etc/auth_pub.pem >&/dev/null
+fi
+
+if [ -d /tftpboot ] ; then
+        cp /etc/auth_pub.pem /var/lib/tftpboot
+fi
+
+#
+#	See how we were called.
+#
+case "$1" in
+  start)
+	# Check if authd is already running
+	if [ ! -f /var/lock/subsys/authd ]; then
+	    gprintf "Starting authd daemon:"  
+	    daemon /usr/sbin/authd -d
+	    RETVAL=$?
+	    [ $RETVAL -eq 0 ] && touch /var/lock/subsys/authd
+	    echo
+	fi
+	;;
+  stop)
+	gprintf "Stopping authd daemon: "
+	killproc /usr/sbin/authd
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/authd
+	echo
+	;;
+  reload|restart)
+	$0 stop
+	$0 start
+	RETVAL=$?
+	;;
+  status)
+	status /usr/sbin/authd
+	RETVAL=$?
+	;;
+  *)
+	gprintf "Usage: /etc/rc.d/init.d/authd {start|stop|restart|reload|status}"
+	exit 1
+esac
+
+exit $RETVAL

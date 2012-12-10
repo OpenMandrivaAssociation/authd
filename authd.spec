@@ -87,3 +87,72 @@ rm -rf %{buildroot}
 %{_includedir}/auth.h
 %{_libdir}/libauth.a
 
+
+
+%changelog
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2.3-5mdv2011.0
++ Revision: 610006
+- rebuild
+
+* Wed Apr 21 2010 Funda Wang <fwang@mandriva.org> 0.2.3-4mdv2010.1
++ Revision: 537555
+- rebuild
+
+* Tue Feb 09 2010 Antoine Ginies <aginies@mandriva.com> 0.2.3-3mdv2010.1
++ Revision: 502816
+- fix patch0 pb (initscript)
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+* Thu Aug 14 2008 Oden Eriksson <oeriksson@mandriva.com> 0.2.3-1mdv2009.0
++ Revision: 271983
+- 0.2.3
+- fix build
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Tue Feb 12 2008 Antoine Ginies <aginies@mandriva.com> 0.2.2-4mdv2008.1
++ Revision: 165746
+- fix executable-marked-as-config-file
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Tue Jul 17 2007 Funda Wang <fwang@mandriva.org> 0.2.2-4mdv2008.0
++ Revision: 52830
+- fix prereq
+- New devel package policy
+
+
+* Thu Mar 01 2007 Antoine Ginies <aginies@mandriva.com> 0.2.2-3mdv2007.0
++ Revision: 130581
+- Import authd
+
+* Thu Apr 20 2006 Erwan Velu <erwan@seanodes.com> 0.2.2-3mdk
+- Fixing buildrequires
+
+* Sat Apr 15 2006 Erwan Velu <erwan@seanodes.com> 0.2.2-2mdk
+- Rebuild
+
+* Fri Oct 29 2004 Erwan Velu <erwan@mandrakesoft.com> 0.2.2-1mdk
+- Remove patch1 merged upstream
+
+* Wed Aug 04 2004 Erwan Velu <erwan@mandrakesoft.com> 0.2.1-17mdk
+- Fixing Provides
+
+* Fri Jun 11 2004 Erwan Velu <erwan@mandrakesoft.com> 0.2.1-16mdk
+- Fixing RSA_sign & RSA_verify with NID_md5
+
+* Thu Apr 22 2004 Erwan Velu <erwan@mandrakesoft.com> 0.2.1-15mdk
+- Rebuild
+
