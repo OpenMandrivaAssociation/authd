@@ -6,7 +6,7 @@
 Summary:	Software for obtaining and verifying user credentials 
 Name:		authd
 Version:	0.2.3
-Release:	%mkrel 5
+Release:	6
 License:	BSD-Like
 Group:		System/Servers
 URL:		http://www.cs.berkeley.edu/~bnc/authd/
