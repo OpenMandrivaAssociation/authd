@@ -9,7 +9,7 @@ Version:	0.2.3
 Release:	6
 License:	BSD-Like
 Group:		System/Servers
-URL:		http://www.cs.berkeley.edu/~bnc/authd/
+URL:		https://www.cs.berkeley.edu/~bnc/authd/
 Source:		http://www.theether.org/authd/%{name}-%{version}.tar.gz
 Source1:	authd.init
 Patch0:		authd-Makefile.in.patch
