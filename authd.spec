@@ -18,6 +18,11 @@ Requires:	openssh-clients
 Requires:	openssh-server
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 Buildrequires:	libe-cluster >= 0.2
 Buildrequires:	openssl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
